@@ -71,7 +71,15 @@ public class MyLinkedList {
 	
 		
 	}
-	
+	public void addFirst(Student stud){
+		try {
+			add(stud, 0);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public void add(Student stud, int index)throws MyException{
 		if((index>=0)&&(index<=size)){ 
@@ -87,7 +95,8 @@ public class MyLinkedList {
 				    	 }
 				    	 element=new Node(stud, buf, buf.getPrev());
 				    	 buf.setPrev(element);
-				    	 element.getPrev().setNext(element);
+				    	 if (index>0){element.getPrev().setNext(element);}
+				    	 else {first=element;}
 				    	 element=last;
 				    	 
 				    	 

@@ -10,14 +10,14 @@ public class Main {
 		Student st1=new Student("Vasya",22);
 		Student st2=new Student("Petr",21);
 		Student st3=new Student("Ivan",23);
-		Student st4=new Student("Ivannnn",25);
-		Student st5=new Student("I888888",1111);
+		Student st4=new Student("Evgeniy",25);
+		Student st5=new Student("Alex",20);
 		MyLinkedList list=new MyLinkedList();
 
 	list.add(st1);
 	list.add(st2);
-	list.add(st3);
-	list.add(st4);
+	list.addFirst(st3);
+	list.addFirst(st4);
 	
 list.ShowAll();
 	
@@ -33,7 +33,7 @@ list.ShowAll();
 	
 	
 	try{
-		list.add(st5, 1);
+		list.add(st5, 0);
 		list.ShowAll();
 	}
 	catch(MyException ex){
